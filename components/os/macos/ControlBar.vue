@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   name: 'ControlBar',
   data() {
@@ -56,6 +57,7 @@ export default {
           subMenu: [
             {
               text: 'New File',
+              click: this.createNewFile,
             },
           ],
         },
@@ -84,6 +86,14 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['addNewFile']),
+
+    createNewFile() {
+      this.addNewFile({
+        icon: '/img/macos/icons/file.png',
+        text: 'Berkay-UZUN-CV-TR.pdf',
+      })
+    },
     focusClass(index) {
       if (this.mouseOverIndex === index && this.menuDropdownStataus) {
         return 'focus'
@@ -111,6 +121,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  z-index: 5;
 
   .window-menu {
     display: flex;

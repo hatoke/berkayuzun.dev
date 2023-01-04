@@ -1,5 +1,5 @@
 <template>
-  <div class="file">
+  <div class="file" @dblclick="test()">
     <img :src="icon" />
     <span>{{ text }}</span>
   </div>
@@ -20,8 +20,10 @@ export default {
     },
   },
   mounted() {
-    const fileElement = document.querySelector('.file')
-    dragElement(fileElement)
+    const fileElement = document.querySelectorAll('.file')
+    fileElement.forEach(element => {
+      dragElement(element)
+    })
   },
 }
 </script>
@@ -50,6 +52,7 @@ export default {
     color: #fff;
     max-width: 100px;
     border-radius: 5px;
+    user-select: none;
   }
 }
 </style>

@@ -1,13 +1,26 @@
 <template>
   <div class="macos">
     <OsMacosControlBar />
-    <OsMacosFileIcon icon="/img/macos/icons/file.png" text="Berkay-UZUN-CV-TR.pdf" />
+    <template v-if="windowFile.length > 0">
+      <OsMacosFileIcon
+        v-for="(item, index) in windowFile"
+        :key="index"
+        :icon="item.icon"
+        :text="item.text"
+      />
+    </template>
     <OsMacosDock />
   </div>
 </template>
 
 <script>
-export default {}
+import { mapState } from 'vuex'
+export default {
+  name: 'MacOs',
+  computed: {
+    ...mapState(['windowFile', 'windowList']),
+  },
+}
 </script>
 
 <style lang="scss">
