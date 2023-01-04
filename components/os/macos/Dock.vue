@@ -42,6 +42,10 @@ export default {
           class: 'docker',
         },
         {
+          name: 'Postman',
+          img: '/img/macos/icons/postman.png',
+        },
+        {
           name: 'Mongo',
           img: '/img/macos/icons/mongo.png',
         },
