@@ -25,7 +25,7 @@ export default {
   methods: {
     clickEvent(item) {
       if (item.click && typeof item.click === 'function') {
-        item.clik()
+        item.click()
       }
     },
   },
@@ -53,7 +53,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
 
     .item {
       padding: 2px 10px;
