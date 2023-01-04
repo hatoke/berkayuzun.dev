@@ -48,8 +48,9 @@ export default {
       } */
       if (this.$route.query.os && this.osList[this.$route.query.os]) {
         this.detectedOs = this.$route.query.os
+      } else {
+        this.detectedOs = 'mac'
       }
-      this.detectedOs = 'mac'
     },
   },
 }
