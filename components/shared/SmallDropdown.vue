@@ -34,6 +34,7 @@ export default {
 
 <style scoped lang="scss">
 .small-dropdown {
+  z-index: 10;
   min-width: 220px;
   width: auto;
   z-index: 2;
