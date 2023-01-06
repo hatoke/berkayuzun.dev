@@ -67,7 +67,13 @@ export default {
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['@nuxtjs/sitemap'],
+
+  sitemap: {
+    hostname: 'https://berkayuzun.dev',
+    gzip: true,
+    routes: ['/'],
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
