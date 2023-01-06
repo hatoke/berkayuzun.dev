@@ -7,6 +7,7 @@
         :key="index"
         :icon="item.icon"
         :text="item.text"
+        :style="`top: ${topPosition(index)}px`"
       />
     </template>
     <OsMacosDock />
@@ -19,6 +20,20 @@ export default {
   name: 'MacOs',
   computed: {
     ...mapState(['windowFile', 'windowList']),
+  },
+  methods: {
+    topPosition(index) {
+      const heightOffset = 120
+      const rules = {
+        0: 40,
+        1: 40 + heightOffset,
+      }
+      if (rules[index]) {
+        return rules[index]
+      } else {
+        return index * heightOffset
+      }
+    },
   },
 }
 </script>

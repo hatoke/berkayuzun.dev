@@ -21,7 +21,7 @@ export default {
   },
   mounted() {
     const fileElement = document.querySelectorAll('.file')
-    fileElement.forEach(element => {
+    fileElement.forEach((element) => {
       dragElement(element)
     })
   },
