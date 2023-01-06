@@ -11,7 +11,19 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Welcome to my personal website! My name is Berkay Uzun and I am a frontend developer with a passion for developing solutions. Thank you for visiting!',
+      },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content:
+          'frontend developer, front-end developer, developer, Berkay UZUN',
+      },
+      { hid: 'author', name: 'author', content: 'Berkay UZUN' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
