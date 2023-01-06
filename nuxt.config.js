@@ -33,7 +33,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [`~/plugins/firebase.js`],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -45,6 +45,21 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
   ],
+
+  firebase: {
+    config: {
+      apiKey: 'AIzaSyDzFYIOXdEJYp12Tsh_JvquBkhjLzIzM_E',
+      authDomain: 'berkayuzundev.firebaseapp.com',
+      projectId: 'berkayuzundev',
+      storageBucket: 'berkayuzundev.appspot.com',
+      messagingSenderId: '737482634891',
+      appId: '1:737482634891:web:c523e9f65412b95df7068e',
+      measurementId: 'G-WLHZ6377B3',
+    },
+    services: {
+      auth: true,
+    },
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
