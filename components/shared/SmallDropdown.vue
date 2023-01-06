@@ -41,7 +41,7 @@ export default {
   position: absolute;
   top: 26px;
   left: 0;
-  background-color: rgba(98, 93, 93, 0.2);
+  background-color: rgba(98, 93, 93, 0.9);
   backdrop-filter: blur(1000px);
   display: flex;
   flex-direction: column;
