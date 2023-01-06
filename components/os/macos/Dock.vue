@@ -22,41 +22,49 @@ export default {
         {
           name: 'Finder',
           img: '/img/macos/icons/finder.png',
+          alt: 'macos finder icon',
         },
         {
           name: 'Google Chrome',
           img: '/img/macos/icons/google-chrome.png',
+          alt: 'macos google chrome desktop app icon',
         },
         {
           name: 'VS Code',
           img: '/img/macos/icons/vs-code.png',
+          alt: 'macos visual code desktop app icon',
         },
         {
           name: 'Figma',
           img: '/img/macos/icons/figma.png',
-          class: 'figma',
+          alt: 'macos figma app desktop icon',
         },
         {
           name: 'Docker',
           img: '/img/macos/icons/docker.png',
           class: 'docker',
+          alt: 'macos docker desktop app icon',
         },
         {
           name: 'Postman',
           img: '/img/macos/icons/postman.png',
+          alt: 'macos postman desktop app icon',
         },
         {
           name: 'Mongo',
           img: '/img/macos/icons/mongo.png',
+          alt: 'macos mongodb desktop app icon',
         },
         {
           name: 'Github',
           img: '/img/macos/icons/github.png',
+          alt: 'macos github desktop app icon',
           click: this.openGitHubPage,
         },
         {
           name: 'System Settings',
           img: '/img/macos/icons/settings.png',
+          alt: 'macos settings icon',
         },
       ],
     }

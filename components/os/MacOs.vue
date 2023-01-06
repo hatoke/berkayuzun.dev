@@ -6,6 +6,7 @@
         v-for="(item, index) in windowFile"
         :key="index"
         :icon="item.icon"
+        :icon-alt="item.iconAlt"
         :text="item.text"
         :style="`top: ${topPosition(index)}px`"
       />

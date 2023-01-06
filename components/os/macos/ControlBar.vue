@@ -9,7 +9,7 @@
         @mouseenter="checkDropdown(index)"
         @mouseleave="checkDropdown(index)"
       >
-        <img v-if="item.icon" :src="item.icon" />
+        <img v-if="item.icon" :src="item.icon" :alt="item.iconAlt" />
         <span v-if="item.text">{{ item.text }}</span>
         <template v-if="item.subMenu">
           <SharedSmallDropdown
@@ -34,6 +34,7 @@ export default {
       menuList: [
         {
           icon: '/img/macos/icons/apple-logo-white.png',
+          iconAlt: 'apple logo',
           subMenu: [
             {
               text: 'About Me :P',
@@ -91,6 +92,7 @@ export default {
     createNewFile() {
       this.addNewFile({
         icon: '/img/macos/icons/file.png',
+        iconAlt: 'macos file icon',        
         text: 'Berkay-UZUN-CV-TR.pdf',
       })
     },

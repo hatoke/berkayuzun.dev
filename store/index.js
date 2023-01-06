@@ -4,6 +4,7 @@ export const state = () => ({
     {
       id: Math.floor(Math.random() * 1000),
       icon: '/img/macos/icons/file.png',
+      iconAlt: 'macos file icon',
       text: 'Berkay-UZUN-CV-TR.pdf',
     },
   ],

@@ -1,6 +1,6 @@
 <template>
   <div class="file" @dblclick="test()">
-    <img :src="icon" />
+    <img :src="icon" :alt="iconAlt" />
     <span>{{ text }}</span>
   </div>
 </template>
@@ -11,6 +11,10 @@ export default {
   name: 'FileIcon',
   props: {
     icon: {
+      type: String,
+      required: true,
+    },
+    iconAlt: {
       type: String,
       required: true,
     },
