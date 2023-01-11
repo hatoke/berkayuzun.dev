@@ -1,5 +1,5 @@
 <template>
-  <div class="file" @dblclick="test()">
+  <div class="file" @dblclick="clickEvent(index)">
     <img :src="icon" :alt="iconAlt" />
     <span>{{ text }}</span>
   </div>
@@ -14,6 +14,10 @@ export default {
       type: String,
       required: true,
     },
+    index: {
+      type: Number,
+      required: true,
+    },
     iconAlt: {
       type: String,
       required: true,
@@ -21,6 +25,11 @@ export default {
     text: {
       type: String,
       required: true,
+    },
+    clickEvent: {
+      type: Function,
+      default: () => {},
+      required: false,
     },
   },
   mounted() {

@@ -19,7 +19,9 @@
         </template>
       </li>
     </ul>
-    <div class=""></div>
+    <ul class="cloak">
+      <li>07 January Sat 14:04</li>
+    </ul>
   </div>
 </template>
 
@@ -92,7 +94,7 @@ export default {
     createNewFile() {
       this.addNewFile({
         icon: '/img/macos/icons/file.png',
-        iconAlt: 'macos file icon',        
+        iconAlt: 'macos file icon',
         text: 'Berkay-UZUN-CV-TR.pdf',
       })
     },
@@ -125,12 +127,12 @@ export default {
   justify-content: space-between;
   position: relative;
   z-index: 5;
+  font-size: 14px;
+  color: #fff;
 
   .window-menu {
     display: flex;
     align-items: center;
-    font-size: 14px;
-    color: #fff;
     font-weight: 500;
 
     .focus {

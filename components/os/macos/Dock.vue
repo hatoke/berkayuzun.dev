@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'Dock',
   data() {
@@ -69,6 +70,23 @@ export default {
       ],
     }
   },
+  computed: {
+    ...mapState(['windowList']),
+  },
+  watch: {
+    windowList(newList) {
+      if (newList.length > 0) {
+        const { icon, component } = newList.at(-1)
+        this.appList.push({
+          name: component,
+          img: icon,
+          alt: component,
+        })
+      } else {
+        this.appList.splice(-1, 1)
+      }
+    },
+  },
   methods: {
     checkFunction(item) {
       if (item.click && typeof item.click === 'function') {
@@ -85,12 +103,14 @@ export default {
 <style lang="scss">
 .macos-dock-wrapper {
   position: absolute;
+  z-index: 30;
   bottom: 5px;
   left: 50%;
   transform: translateX(-50%);
 
+  //TODO icon size inc and scla blur problem maybe solved dec scale value
   .macos-dock {
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     padding: 0 3px 4px 3px;
     backdrop-filter: blur(2px) saturate(90%);
     border-radius: 15px;

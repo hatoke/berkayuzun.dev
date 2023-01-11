@@ -1,13 +1,6 @@
 export const state = () => ({
   windowList: [],
-  windowFile: [
-    {
-      id: Math.floor(Math.random() * 1000),
-      icon: '/img/macos/icons/file.png',
-      iconAlt: 'macos file icon',
-      text: 'Berkay-UZUN-CV-TR.pdf',
-    },
-  ],
+  windowFile: [],
 })
 
 export const getters = {
@@ -28,6 +21,12 @@ export const mutations = {
     }
   },
 
+  REMOVE_LIST(state, index) {
+    if (state.windowList[index]) {
+      state.windowList.splice(index, 1)
+    }
+  },
+
   ADD_FILE(state, newFile) {
     if (newFile && typeof newFile === 'object') {
       state.windowFile.push(newFile)
@@ -36,8 +35,12 @@ export const mutations = {
 }
 
 export const actions = {
-  addNewList({ commit }, { newItem }) {
+  addWindowList({ commit }, newItem) {
     commit('ADD_LIST', newItem)
+  },
+
+  removeWindowList({ commit }, index) {
+    commit('REMOVE_LIST', index)
   },
 
   addNewFile({ commit }, newItem) {

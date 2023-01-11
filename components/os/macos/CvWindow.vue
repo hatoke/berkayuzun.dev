@@ -1,0 +1,93 @@
+<template>
+  <div class="cv-window">
+    <SharedWindowFrame>
+      <div class="frame-menu">
+        <ul class="window-manager">
+          <li class="close"></li>
+          <li class="minimize"></li>
+          <li class="fullscreen"></li>
+        </ul>
+
+        <ul class="menu-list">
+          <li class="file-name">
+            <span>Berkay-UZUN-CV-TR.pdf</span>
+            <small>Page 1</small>
+          </li>
+        </ul>
+      </div>
+      <object data="/pdf/Berkay-UZUN-CV-TR.pdf"></object>
+    </SharedWindowFrame>
+  </div>
+</template>
+
+<style lang="scss">
+.frame-menu {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background: #fff;
+  position: absolute;
+  top: 10;
+  left: -15px;
+  right: -15px;
+  z-index: 25;
+  border-radius: 10px 10px 0 0;
+  background-color: rgba(90, 88, 94, 1);
+  padding: 0 20px;
+  font-size: 12px;
+
+  .window-manager {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+
+    li {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 7px;
+      position: relative;
+    }
+
+    .close {
+      background-color: #ff605c;
+    }
+
+    .minimize {
+      background-color: #ffbd44;
+    }
+
+    .fullscreen {
+      background-color: #00ca4e;
+    }
+  }
+
+  .menu-list {
+    display: flex;
+    align-items: center;
+  }
+
+  .file-name {
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
+object {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 21;
+
+  embed {
+    overflow-x: hidden !important;
+  }
+}
+</style>

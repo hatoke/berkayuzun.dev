@@ -5,24 +5,36 @@
       <OsMacosFileIcon
         v-for="(item, index) in windowFile"
         :key="index"
+        :index="index"
         :icon="item.icon"
         :icon-alt="item.iconAlt"
         :text="item.text"
+        :click-event="item.clickEvent"
         :style="`top: ${topPosition(index)}px`"
       />
+    </template>
+    <template v-if="windowList.length > 0">
+      <template v-for="(window, index) in windowList">
+        <component :key="index + 100" :is="window.component"></component>
+      </template>
     </template>
     <OsMacosDock />
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 export default {
   name: 'MacOs',
   computed: {
     ...mapState(['windowFile', 'windowList']),
   },
+  mounted() {
+    this.setInitialIcon()
+  },
   methods: {
+    ...mapActions(['addNewFile', 'addWindowList']),
+
     topPosition(index) {
       const heightOffset = 120
       const rules = {
@@ -34,6 +46,19 @@ export default {
       } else {
         return index * heightOffset
       }
+    },
+    setInitialIcon() {
+      this.addNewFile({
+        icon: '/img/macos/icons/file.png',
+        iconAlt: 'macos file icon',
+        text: 'Berkay-UZUN-CV-TR.pdf',
+        clickEvent: () => {
+          this.addWindowList({
+            icon: '/img/macos/icons/file.png',
+            component: 'OsMacosCvWindow',
+          })
+        },
+      })
     },
   },
 }
