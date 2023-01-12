@@ -17,10 +17,10 @@ export const getters = {
 export const mutations = {
   ADD_LIST(state, newObject) {
     if (newObject && typeof newObject === 'object') {
-      const isHas = state.windowList.filter(
+      const isHas = state.windowList.some(
         (item) => item.text === newObject.text
       )
-      if (isHas.length === 0) {
+      if (!isHas) {
         newObject.id = Math.floor(Math.random() * 1000)
         state.windowList.push(newObject)
       }
