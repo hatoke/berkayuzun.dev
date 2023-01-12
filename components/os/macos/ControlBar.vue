@@ -20,13 +20,14 @@
       </li>
     </ul>
     <ul class="cloak">
-      <li>07 January Sat 14:04</li>
+      <li>{{ dateTime }}</li>
     </ul>
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
+import moment from 'moment'
 export default {
   name: 'ControlBar',
   data() {
@@ -86,10 +87,22 @@ export default {
           text: 'History',
         },
       ],
+      dateTime: new Date(),
     }
+  },
+  mounted() {
+    this.setTimeFormat()
+    window.setInterval(() => {
+      this.setTimeFormat()
+    }, 1000)
   },
   methods: {
     ...mapActions(['addNewFile']),
+
+    setTimeFormat() {
+      // eslint-disable-next-line import/no-named-as-default-member
+      this.dateTime = `${moment().format('DD MMMM ddd HH:mm')}`
+    },
 
     createNewFile() {
       this.addNewFile({
