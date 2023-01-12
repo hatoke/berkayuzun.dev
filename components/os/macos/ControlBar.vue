@@ -26,9 +26,9 @@
 </template>
 
 <script>
-import { clientLanguage } from '~/plugins/language'
 import { mapActions } from 'vuex'
 import moment from 'moment'
+import { clientLanguage } from '~/plugins/language'
 export default {
   name: 'ControlBar',
   data() {
