@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import { clientLanguage } from '~/plugins/language'
 import { mapActions } from 'vuex'
 import moment from 'moment'
 export default {
@@ -107,7 +108,7 @@ export default {
       this.addNewFile({
         icon: '/img/macos/icons/file.png',
         iconAlt: 'macos file icon',
-        text: 'Berkay-UZUN-CV-TR.pdf',
+        text: `Berkay-UZUN-CV-${clientLanguage()}.pdf`,
       })
     },
     focusClass(index) {

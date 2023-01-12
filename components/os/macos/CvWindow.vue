@@ -10,15 +10,27 @@
 
         <ul class="menu-list">
           <li class="file-name">
-            <span>Berkay-UZUN-CV-TR.pdf</span>
+            <span>Berkay-UZUN-CV-{{ language }}.pdf</span>
             <small>Page 1</small>
           </li>
         </ul>
       </div>
-      <object data="/pdf/Berkay-UZUN-CV-TR.pdf"></object>
+      <object :data="`/pdf/Berkay-UZUN-CV-${language}.pdf`"></object>
     </SharedWindowFrame>
   </div>
 </template>
+
+<script>
+import { clientLanguage } from '~/plugins/language'
+export default {
+  name: 'CvWindow',
+  computed: {
+    language() {
+      return clientLanguage()
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 .frame-menu {

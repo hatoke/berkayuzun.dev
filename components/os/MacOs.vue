@@ -18,11 +18,12 @@
         <component :key="index + 100" :is="window.component"></component>
       </template>
     </template>
-    <OsMacosDock v-show="windowFullscreenStatus"/>
+    <OsMacosDock v-show="windowFullscreenStatus" />
   </div>
 </template>
 
 <script>
+import { clientLanguage } from '~/plugins/language'
 import { mapState, mapActions } from 'vuex'
 export default {
   name: 'MacOs',
@@ -51,7 +52,7 @@ export default {
       this.addNewFile({
         icon: '/img/macos/icons/file.png',
         iconAlt: 'macos file icon',
-        text: 'Berkay-UZUN-CV-TR.pdf',
+        text: `Berkay-UZUN-CV-${clientLanguage()}.pdf`,
         clickEvent: () => {
           this.addWindowList({
             icon: '/img/macos/icons/file.png',
