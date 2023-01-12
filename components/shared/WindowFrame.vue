@@ -58,7 +58,7 @@ export default {
 .full-screen {
   width: 100%;
   height: 100%;
-  top: 30px !important;
+  top: 0px !important;
   left: 0 !important;
   right: 0 !important;
   transition: 200ms all ease;

@@ -27,7 +27,10 @@ export const mutations = {
     }
   },
 
-  REMOVE_LIST(state, index) {
+  REMOVE_LIST(state, componentName) {
+    const index = state.windowList.findIndex(
+      (item) => item.component === componentName
+    )
     if (state.windowList[index]) {
       state.windowList.splice(index, 1)
     }
@@ -49,8 +52,8 @@ export const actions = {
     commit('ADD_LIST', newItem)
   },
 
-  removeWindowList({ commit }, index) {
-    commit('REMOVE_LIST', index)
+  removeWindowList({ commit }, componentName) {
+    commit('REMOVE_LIST', componentName)
   },
 
   addNewFile({ commit }, newItem) {

@@ -3,7 +3,7 @@
     <SharedWindowFrame>
       <div class="frame-menu">
         <ul class="window-manager">
-          <li class="close"></li>
+          <li class="close" @click="closeModal()"></li>
           <li class="minimize"></li>
           <li class="fullscreen"></li>
         </ul>
@@ -21,12 +21,20 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import { clientLanguage } from '~/plugins/language'
 export default {
   name: 'CvWindow',
   computed: {
     language() {
       return clientLanguage()
+    },
+  },
+  methods: {
+    ...mapActions(['removeWindowList']),
+
+    closeModal() {
+      this.removeWindowList('OsMacosCvWindow')
     },
   },
 }

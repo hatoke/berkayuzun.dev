@@ -1,6 +1,6 @@
 <template>
   <div class="macos">
-    <OsMacosControlBar />
+    <OsMacosControlBar v-show="windowFullscreenStatus" />
     <template v-if="windowFile.length > 0">
       <OsMacosFileIcon
         v-for="(item, index) in windowFile"
@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import { clientLanguage } from '~/plugins/language'
 import { mapState, mapActions } from 'vuex'
+import { clientLanguage } from '~/plugins/language'
 export default {
   name: 'MacOs',
   computed: {
