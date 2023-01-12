@@ -100,7 +100,6 @@ export default {
     ...mapActions(['addNewFile']),
 
     setTimeFormat() {
-      // eslint-disable-next-line import/no-named-as-default-member
       this.dateTime = `${moment().format('DD MMMM ddd HH:mm')}`
     },
 
