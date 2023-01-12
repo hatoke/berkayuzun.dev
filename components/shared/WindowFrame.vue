@@ -1,7 +1,7 @@
 <template>
   <div
     class="window-frame"
-    :class="fullScreen && 'full-screen'"    
+    :class="fullScreen && 'full-screen'"
     @dblclick="setFullScreen()"
   >
     <div class="window-content">
@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import dragElement from '~/assets/js/drag'
 export default {
   name: 'WindowFrame',
@@ -24,8 +25,11 @@ export default {
     dragElement(windowFrame)
   },
   methods: {
+    ...mapActions(['updateFullscreenStatus']),
+
     setFullScreen() {
       this.fullScreen = !this.fullScreen
+      this.updateFullscreenStatus(!this.fullScreen)
     },
   },
 }
@@ -42,7 +46,7 @@ export default {
   top: calc(50% - 250px);
   left: calc(50% - 300px);
   background-color: #333;
-  color: #fff;  
+  color: #fff;
 }
 
 .window-content {
@@ -53,7 +57,7 @@ export default {
 
 .full-screen {
   width: 100%;
-  height: 88%;
+  height: 100%;
   top: 30px !important;
   left: 0 !important;
   right: 0 !important;

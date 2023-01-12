@@ -18,7 +18,7 @@
         <component :key="index + 100" :is="window.component"></component>
       </template>
     </template>
-    <OsMacosDock />
+    <OsMacosDock v-show="windowFullscreenStatus"/>
   </div>
 </template>
 
@@ -27,7 +27,7 @@ import { mapState, mapActions } from 'vuex'
 export default {
   name: 'MacOs',
   computed: {
-    ...mapState(['windowFile', 'windowList']),
+    ...mapState(['windowFile', 'windowList', 'windowFullscreenStatus']),
   },
   mounted() {
     this.setInitialIcon()
