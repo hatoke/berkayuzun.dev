@@ -1,6 +1,6 @@
 # berkayuzun-dev
 
-My personal website [berkayuzun.dev](https://www.berkayuzun.dev)
+My personal website [berkayuzun.dev](https://berkayuzun.dev/)
 
 ## Build Setup
 
