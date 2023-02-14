@@ -26,8 +26,9 @@ export default {
   watch: {
     progresWidth(newWidht) {
       if (newWidht >= 100) {
-        this.loadingStatus = false
-        setTimeout(() => {}, 200)
+        setTimeout(() => {
+          this.loadingStatus = false
+        }, 1200)
       }
     },
   },
