@@ -88,7 +88,7 @@ export default {
     border-radius: 15px;
     height: 100%;
     background: #fff;
-    transition: 250ms all ease;
+    transition: 800ms all ease;
   }
 }
 </style>
