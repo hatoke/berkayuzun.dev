@@ -53,7 +53,12 @@ export default {
         icon: '/img/macos/icons/file.png',
         iconAlt: 'macos file icon',
         text: `Berkay-UZUN-CV-${clientLanguage()}.pdf`,
-        clickEvent: () => console.log('working on progress'),
+        clickEvent: () => {
+          this.addWindowList({
+            icon: '/img/macos/icons/file.png',
+            component: 'OsMacosCvWindow',
+          })
+        },
       })
     },
   },
