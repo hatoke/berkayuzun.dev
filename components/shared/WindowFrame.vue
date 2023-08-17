@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 import dragElement from '~/assets/js/drag'
 export default {
   name: 'WindowFrame',
@@ -19,6 +19,14 @@ export default {
     return {
       fullScreen: false,
     }
+  },
+  computed: {
+    ...mapState(['windowFullscreenStatus']),
+  },
+  watch: {
+    windowFullscreenStatus(newStatus) {
+      this.fullScreen = !newStatus
+    },
   },
   mounted() {
     const windowFrame = document.querySelector('.window-frame')

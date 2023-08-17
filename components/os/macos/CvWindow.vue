@@ -5,7 +5,7 @@
         <ul class="window-manager">
           <li class="close" @click="closeModal()"></li>
           <li class="minimize"></li>
-          <li class="fullscreen"></li>
+          <li class="fullscreen" @click="setFullScreen()"></li>
         </ul>
 
         <ul class="menu-list">
@@ -21,20 +21,25 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 import { clientLanguage } from '~/plugins/language'
 export default {
   name: 'CvWindow',
   computed: {
+    ...mapState(['windowFullscreenStatus']),
     language() {
       return clientLanguage()
     },
   },
   methods: {
-    ...mapActions(['removeWindowList']),
+    ...mapActions(['removeWindowList', 'updateFullscreenStatus']),
 
+    setFullScreen() {
+      this.updateFullscreenStatus(!this.windowFullscreenStatus)
+    },
     closeModal() {
       this.removeWindowList('OsMacosCvWindow')
+      this.updateFullscreenStatus(false)
     },
   },
 }
