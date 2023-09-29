@@ -39,7 +39,7 @@ export default {
     },
     closeModal() {
       this.removeWindowList('OsMacosCvWindow')
-      this.updateFullscreenStatus(false)
+      this.updateFullscreenStatus(true)
     },
   },
 }
