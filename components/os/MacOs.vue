@@ -74,7 +74,7 @@ export default {
   bottom: 0;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url('~/static/img/macos/wallpaper/dark-purple.jpg');
+  background-image: url('~/static/img/macos/wallpaper/ventura.jpg');
   cursor: url('~/static/img/macos/cursor/pointer.svg'), 0, 0, auto;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }

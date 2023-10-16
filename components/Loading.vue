@@ -20,7 +20,7 @@ export default {
     return {
       loadingStatus: true,
       progresWidth: 0,
-      progressMoveDuration: 700,
+      progressMoveDuration: 150,
     }
   },
   watch: {

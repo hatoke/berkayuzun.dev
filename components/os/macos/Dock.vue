@@ -57,6 +57,11 @@ export default {
           alt: 'macos mongodb desktop app icon',
         },
         {
+          name: 'Data Grip',
+          img: '/img/macos/icons/data-grip.png',
+          alt: 'macos datagrip desktop app icon',
+        },
+        {
           name: 'Github',
           img: '/img/macos/icons/github.png',
           alt: 'macos github desktop app icon',
@@ -111,7 +116,7 @@ export default {
   //TODO icon size inc and scla blur problem maybe solved dec scale value
   .macos-dock {
     margin-bottom: 3px;
-    padding: 0 3px 4px 3px;
+    padding: 3px 3px 4px 3px;
     backdrop-filter: blur(2px) saturate(90%);
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -119,7 +124,7 @@ export default {
     transition: 200ms all ease;
 
     &:hover {
-      transform: scale(1.09);
+      transform: scale(1.1);
     }
 
     .docker {
@@ -133,7 +138,7 @@ export default {
     }
 
     li {
-      transition: 200ms all ease;
+      transition: 300ms all ease;
       margin: 0 2px;
 
       img {
@@ -141,10 +146,10 @@ export default {
       }
 
       &:hover {
-        transform: translateY(-8px) scale(1.1);
+        transform: translateY(-12px) scale(1.1);
 
         & + li {
-          transform: translateY(-4px) scale(1.1);
+          transform: translateY(-6px) scale(1.1);
         }
       }
 
