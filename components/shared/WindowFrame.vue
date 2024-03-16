@@ -1,11 +1,10 @@
 <template>
-  <div
-    class="window-frame"
-    :class="fullScreen && 'full-screen'"
-    @dblclick="setFullScreen()"
-  >
+  <div class="window-frame" :class="fullScreen && 'full-screen'">
+    <div class="window-header" @dblclick="setFullScreen()">
+      <slot name="header"></slot>
+    </div>
     <div class="window-content">
-      <slot></slot>
+      <slot name="content"></slot>
     </div>
   </div>
 </template>
@@ -30,7 +29,8 @@ export default {
   },
   mounted() {
     const windowFrame = document.querySelector('.window-frame')
-    dragElement(windowFrame)
+    const windowHeader = document.querySelector('.window-header')
+    dragElement(windowHeader, windowFrame)
   },
   methods: {
     ...mapActions(['updateFullscreenStatus']),
@@ -47,7 +47,6 @@ export default {
 .window-frame {
   width: 600px;
   height: 500px;
-  padding: 0 15px;
   border-radius: 10px;
   position: absolute;
   z-index: 15;
@@ -55,12 +54,21 @@ export default {
   left: calc(50% - 300px);
   background-color: #333;
   color: #fff;
-}
+  overflow: hidden;
 
-.window-content {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  .window-header {
+    height: 50px;
+    user-select: none !important;
+  }
+
+  .window-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    padding: 10px;
+    overflow: auto;
+  }
 }
 
 .full-screen {
@@ -70,5 +78,6 @@ export default {
   left: 0 !important;
   right: 0 !important;
   transition: 200ms all ease;
+  border-radius: 0 !important;
 }
 </style>

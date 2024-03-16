@@ -48,6 +48,8 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-width: 100px;
+  min-height: 100px;
 
   &:active {
     span {
@@ -66,6 +68,7 @@ export default {
     max-width: 100px;
     border-radius: 5px;
     user-select: none;
+    padding: 0 2px;
   }
 }
 </style>

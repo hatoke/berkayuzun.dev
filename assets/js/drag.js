@@ -1,16 +1,23 @@
-export default function (elmnt) {
-  let pos1 = 0
-  let pos2 = 0
-  let pos3 = 0
-  let pos4 = 0
+export default function (dragElement, targetElement) {
+  if (!targetElement) {
+    targetElement = dragElement
+  }
 
-  elmnt.onmousedown = dragMouseDown
+  const contorlBar = document.getElementById('control-bar')
+  const contorlBarHeight = contorlBar ? contorlBar.clientHeight - 1 : 28
+
+  let dragX = 0
+  let dragY = 0
+  let mouseX = 0
+  let mouseY = 0
+  
+  dragElement.onmousedown = dragMouseDown
 
   function dragMouseDown(e) {
     e = e || window.event
     e.preventDefault()
-    pos3 = e.clientX
-    pos4 = e.clientY
+    mouseX = e.clientX
+    mouseY = e.clientY
     document.onmouseup = closeDragElement
     document.onmousemove = elementDrag
   }
@@ -18,12 +25,14 @@ export default function (elmnt) {
   function elementDrag(e) {
     e = e || window.event
     e.preventDefault()
-    pos1 = pos3 - e.clientX
-    pos2 = pos4 - e.clientY
-    pos3 = e.clientX
-    pos4 = e.clientY
-    elmnt.style.top = elmnt.offsetTop - pos2 + 'px'
-    elmnt.style.left = elmnt.offsetLeft - pos1 + 'px'
+    dragX = mouseX - e.clientX
+    dragY = mouseY - e.clientY
+    mouseX = e.clientX
+    mouseY = e.clientY
+    if (targetElement.offsetTop - dragY > contorlBarHeight) {
+      targetElement.style.top = targetElement.offsetTop - dragY + 'px'
+    }
+    targetElement.style.left = targetElement.offsetLeft - dragX + 'px'
   }
 
   function closeDragElement() {

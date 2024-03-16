@@ -1,5 +1,5 @@
 <template>
-  <div class="control-center">
+  <div id="control-bar" class="control-center">
     <ul class="window-menu">
       <li
         v-for="(item, index) in menuList"

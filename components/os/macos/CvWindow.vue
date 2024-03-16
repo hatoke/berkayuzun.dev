@@ -1,21 +1,25 @@
 <template>
-  <div class="cv-window">
+  <div id="cv-window">
     <SharedWindowFrame>
-      <div class="frame-menu">
-        <ul class="window-manager">
-          <li class="close" @click="closeModal()"></li>
-          <li class="minimize"></li>
-          <li class="fullscreen" @click="setFullScreen()"></li>
-        </ul>
+      <template #header>
+        <div class="frame-menu">
+          <ul class="window-manager">
+            <li class="close" @click="closeModal()"></li>
+            <li class="minimize"></li>
+            <li class="fullscreen" @click="setFullScreen()"></li>
+          </ul>
 
-        <ul class="menu-list">
-          <li class="file-name">
-            <span>Berkay-UZUN-CV-{{ language }}.pdf</span>
-            <small>Page 1</small>
-          </li>
-        </ul>
-      </div>
-      <object :data="`/pdf/Berkay-UZUN-CV-${language}.pdf`"></object>
+          <ul class="menu-list">
+            <li class="file-name">
+              <span>Berkay-UZUN-CV-{{ language }}.pdf</span>
+              <small>Page 1</small>
+            </li>
+          </ul>
+        </div>
+      </template>
+      <template #content>
+        <object :data="`/pdf/Berkay-UZUN-CV-${language}.pdf`"></object>
+      </template>
     </SharedWindowFrame>
   </div>
 </template>
@@ -51,10 +55,6 @@ export default {
   align-items: center;
   height: 50px;
   background: #fff;
-  position: absolute;
-  top: 10;
-  left: -15px;
-  right: -15px;
   z-index: 25;
   border-radius: 10px 10px 0 0;
   background-color: rgba(90, 88, 94, 1);

@@ -26,14 +26,29 @@ export default {
           alt: 'macos finder icon',
         },
         {
+          name: 'Arc',
+          img: '/img/macos/icons/arc-browser.png',
+          alt: 'macos arc browser icon',
+        },
+        {
           name: 'Google Chrome',
           img: '/img/macos/icons/google-chrome.png',
           alt: 'macos google chrome desktop app icon',
         },
         {
-          name: 'VS Code',
-          img: '/img/macos/icons/vs-code.png',
-          alt: 'macos visual code desktop app icon',
+          name: 'Safari',
+          img: '/img/macos/icons/safari.png',
+          alt: 'macos safari browser icon',
+        },
+        {
+          name: 'ITerm',
+          img: '/img/macos/icons/terminal.png',
+          alt: 'macos iterm app icon',
+        },
+        {
+          name: 'Notes',
+          img: '/img/macos/icons/notes.png',
+          alt: 'macos notes app icon',
         },
         {
           name: 'Figma',
@@ -41,10 +56,9 @@ export default {
           alt: 'macos figma app desktop icon',
         },
         {
-          name: 'Docker',
-          img: '/img/macos/icons/docker.png',
-          class: 'docker',
-          alt: 'macos docker desktop app icon',
+          name: 'VS Code',
+          img: '/img/macos/icons/vs-code.png',
+          alt: 'macos visual code desktop app icon',
         },
         {
           name: 'Postman',
@@ -60,6 +74,16 @@ export default {
           name: 'Data Grip',
           img: '/img/macos/icons/data-grip.png',
           alt: 'macos datagrip desktop app icon',
+        },
+        {
+          name: 'Docker',
+          img: '/img/macos/icons/docker.png',
+          alt: 'macos docker desktop app icon',
+        },
+        {
+          name: 'Discord',
+          img: '/img/macos/icons/discord.png',
+          alt: 'macos discord app icon',
         },
         {
           name: 'Github',
@@ -88,6 +112,7 @@ export default {
           alt: component,
         })
       } else {
+        // TODO add animation when removing file icon from dock
         this.appList.splice(-1, 1)
       }
     },
@@ -113,7 +138,7 @@ export default {
   left: 50%;
   transform: translateX(-50%);
 
-  //TODO icon size inc and scla blur problem maybe solved dec scale value
+  // TODO fix image scale blur problem
   .macos-dock {
     margin-bottom: 3px;
     padding: 3px 3px 4px 3px;
@@ -127,34 +152,25 @@ export default {
       transform: scale(1.1);
     }
 
-    .docker {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 5px;
-      img {
-        width: 45px !important;
-      }
-    }
-
     li {
-      transition: 300ms all ease;
-      margin: 0 2px;
+      transition: 150ms all ease;
+      margin: 0 1px 4px;
 
       img {
         width: 55px;
       }
 
       &:hover {
-        transform: translateY(-12px) scale(1.1);
+        transform: translateY(-12px) scale(1.4);
+        margin: 0 4px;
 
         & + li {
-          transform: translateY(-6px) scale(1.1);
+          transform: translateY(-6px);
         }
       }
 
       &:has(+ li:hover) {
-        transform: translateY(-4px) scale(1.1);
+        transform: translateY(-4px);
       }
     }
   }

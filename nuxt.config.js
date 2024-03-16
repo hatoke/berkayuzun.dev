@@ -67,7 +67,13 @@ export default {
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/sitemap'],
+  modules: ['@nuxtjs/sitemap', '@nuxtjs/markdownit'],
+
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+  },
 
   sitemap: {
     hostname: 'https://berkayuzun.dev',

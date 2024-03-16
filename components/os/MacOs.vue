@@ -4,7 +4,7 @@
     <template v-if="windowFile.length > 0">
       <OsMacosFileIcon
         v-for="(item, index) in windowFile"
-        :key="index"
+        :key="index + '-file'"
         :index="index"
         :icon="item.icon"
         :icon-alt="item.iconAlt"
@@ -15,7 +15,7 @@
     </template>
     <template v-if="windowList.length > 0">
       <template v-for="(window, index) in windowList">
-        <component :key="index + 100" :is="window.component"></component>
+        <component :key="index + '-window'" :is="window.component"></component>
       </template>
     </template>
     <OsMacosDock v-show="windowFullscreenStatus" />
@@ -24,9 +24,13 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
+import FinderWindow from './macos/FinderWindow.vue'
 import { clientLanguage } from '~/plugins/language'
 export default {
   name: 'MacOs',
+  components: {
+    FinderWindow,
+  },
   computed: {
     ...mapState(['windowFile', 'windowList', 'windowFullscreenStatus']),
   },
@@ -37,16 +41,13 @@ export default {
     ...mapActions(['addNewFile', 'addWindowList']),
 
     topPosition(index) {
-      const heightOffset = 120
-      const rules = {
-        0: 40,
-        1: 40 + heightOffset,
+      const height = 110
+      const offset = 50
+      if (index === 0) {
+        return offset
       }
-      if (rules[index]) {
-        return rules[index]
-      } else {
-        return index * heightOffset
-      }
+
+      return offset + height * index
     },
     setInitialIcon() {
       this.addNewFile({
@@ -59,6 +60,18 @@ export default {
             component: 'OsMacosCvWindow',
           })
         },
+      })
+
+      this.addNewFile({
+        icon: '/img/macos/icons/folder.svg',
+        iconAlt: 'macos folder icon',
+        text: `Projects`,
+      })
+
+      this.addNewFile({
+        icon: '/img/macos/icons/folder.svg',
+        iconAlt: 'macos folder icon',
+        text: `Blogs`,
       })
     },
   },
