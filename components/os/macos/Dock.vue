@@ -81,9 +81,9 @@ export default {
           alt: 'macos docker desktop app icon',
         },
         {
-          name: 'Discord',
-          img: '/img/macos/icons/discord.png',
-          alt: 'macos discord app icon',
+          name: 'TeamSpeak 3 Client',
+          img: '/img/macos/icons/teamspeak.png',
+          alt: 'macos TeamSpeak 3 Client app icon',
         },
         {
           name: 'Github',
