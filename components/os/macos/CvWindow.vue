@@ -18,7 +18,30 @@
         </div>
       </template>
       <template #content>
-        <object :data="`/pdf/Berkay-UZUN-CV-${language}.pdf`"></object>
+        <div class="cv-content">
+          <div class="times-change">
+            <div
+              class="tenor-gif-embed"
+              data-postid="13230689"
+              data-share-method="host"
+              data-aspect-ratio="1"
+              data-width="100%"
+            >
+              <a
+                href="https://tenor.com/view/worldofwar-timeschange-change-garrosh-gif-13230689"
+                >Worldofwar Timeschange GIF</a
+              >from
+              <a href="https://tenor.com/search/worldofwar-gifs"
+                >Worldofwar GIFs</a
+              >
+            </div>
+            <script
+              type="text/javascript"
+              async
+              src="https://tenor.com/embed.js"
+            ></script>
+          </div>
+        </div>
       </template>
     </SharedWindowFrame>
   </div>
@@ -114,5 +137,21 @@ object {
   embed {
     overflow-x: hidden !important;
   }
+}
+
+.cv-content{
+  position: relative;
+  width: 100%;
+  height: 100%;  
+  overflow: hidden;
+
+  .times-change {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 500px;
+  width: 500px;
+}
 }
 </style>
