@@ -15,13 +15,13 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'Welcome to my personal website! My name is Berkay Uzun and I am a frontend developer with a passion for developing solutions. Thank you for visiting!',
+          'Welcome to my personal website! My name is Berkay Uzun and I am a delusional developer with a passion for developing solutions. Thank you for visiting!',
       },
       {
         hid: 'keywords',
         name: 'keywords',
         content:
-          'frontend developer, front-end developer, developer, Berkay UZUN',
+          'delusional developer, full-stack developer, front-end developer, developer, Berkay UZUN',
       },
       { hid: 'author', name: 'author', content: 'Berkay UZUN' },
       { name: 'format-detection', content: 'telephone=no' },

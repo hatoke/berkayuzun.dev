@@ -13,7 +13,7 @@ import ScreenFrame from '~/components/ScreenFrame.vue'
 export default Vue.extend({
   components: { ScreenFrame, Loading },
   head: {
-    title: 'Berkay UZUN - Frontend Developer',
+    title: 'Berkay UZUN - Delusional Developer',
   },
   name: 'IndexPage',
 })
